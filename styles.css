@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background-color: aqua;
+}
+
+/* Navigation */
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  height: 13vh;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.logo-container p {
+  font-size: 2rem;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-container .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+}
+
+.menu-container .menu .link {
+  display: block;
+  width: 70px;
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+.search-container {
+  width: 7vw;
+  height: 100%;
+  background-color: #3D4F70;
+}
+
+.search-container .search-icon {
+
+
+}
+
+/* Main */
+
+.main-container {
+  display: flex;
+  height: 87vh;
+
+}
+
+.main-container .place-container {
+  width: 93vw;
+
+}
+
+.main-container .socials-container {
+  width: 7vw;
+  height: 100%;
+  background-color: white;
+
+}
