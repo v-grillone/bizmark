@@ -23,12 +23,17 @@ body {
   font-size: 2rem;
 }
 
+.logo-container .logo:hover {
+  cursor: pointer;
+}
+
 .menu-container {
   display: flex;
   align-items: center;
 }
 
 .menu-container .menu {
+  position: relative;
   display: flex;
   list-style: none;
   margin: 0;
@@ -37,21 +42,46 @@ body {
 }
 
 .menu-container .menu .link {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 70px;
+  padding: 10px 0;
   margin: 0 15px;
   font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.menu-container .menu .active::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  border-bottom: #000000 2px solid;
+  bottom: 0;
+}
+
+.menu-container .menu .link:hover {
+  cursor: pointer;
+  color: #3D4F70;
 }
 
 .search-container {
   width: 7vw;
   height: 100%;
   background-color: #3D4F70;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-container .search-icon {
+  display: block;
+  transition: all 0.2s;
+}
 
-
+.search-container .search-icon:hover {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
 }
 
 /* Main */
@@ -71,5 +101,21 @@ body {
   width: 7vw;
   height: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.socials-container .social-icons {
+  width: 30px;
+  height: 30px;
+  margin: 20px 0;
+  transition: all 0.2s;
+}
+
+.socials-container .social-icons:hover {
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
 }
