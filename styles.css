@@ -71,6 +71,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 2s;
 }
 
 .search-container .search-icon {
@@ -82,6 +83,10 @@ body {
   cursor: pointer;
   width: 35px;
   height: 35px;
+}
+
+.search-container .search-box {
+  /* height: 1.2rem; */
 }
 
 /* Main */
