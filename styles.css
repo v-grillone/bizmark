@@ -99,6 +99,8 @@ body {
 
 /* Main */
 
+/* Main Location */
+
 .main-container {
   display: flex;
   height: 87vh;
@@ -106,9 +108,197 @@ body {
 }
 
 .main-container .place-container {
+  position: relative;
   width: 93vw;
+}
+
+.location-slide {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.black-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.city-background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+/* Location Details */
+
+.location-details {
+  width: 50%;
+  padding: 50px;
+  margin-bottom: 100px;
+}
+
+.location-details .country {
+  margin: 0;
+  font-size: 3.5rem;
+  color: white;
+}
+
+.location-details .city {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.location-details .location-description {
+  margin: 20px 0;
+  font-size: 0.8rem;
+  color: white;  
+}
+
+.location-details .cta {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Location Costs */
+
+.location-costs {
+  width: 50%;
+  padding: 50px 0 50px 50px;
+  margin-bottom: 100px;
+}
+
+.location-costs .location-cost-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+.location-cost-title p {
+  color: white;
+  font-size: 1rem;
+}
+
+.location-costs .location-cost-expenses {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.location-cost-expenses .flight {
+  display: flex;
+  align-items: center;
+}
+
+.location-cost-expenses .hotel {
+  display: flex;
+  align-items: center;
+}
+
+.flight .flight-info {
+  margin-left: 20px;
 
 }
+
+.flight-info .flight-city {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.flight-info .flight-cost {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.hotel .hotel-info {
+  margin-left: 20px;
+}
+
+.hotel-info .hotel-city {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.hotel-info .hotel-cost {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+/* Location Links */
+
+.location-links {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  bottom: 0;
+  width: 40vw;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.location-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.location-links span {
+  height: 50px;
+  width: 1px;
+  background-color: white;
+}
+
+/* Location Scroll */
+
+.location-scroll {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  margin: 0 50px 20px 0;
+}
+
+.scroll-length {
+  display: block;
+  height: 150px;
+  width: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.scroll-distance {
+  display: block;
+  height: 50px;
+  width: 3px;
+  background-color:white;
+}
+
+.scroll-current {
+  color: white;
+  font-size: 1rem;
+}
+
+/* Main Socials */
 
 .main-container .socials-container {
   width: 7vw;
