@@ -65,17 +65,20 @@ body {
 }
 
 .search-container {
+  position: relative;
   width: 7vw;
   height: 100%;
   background-color: #3D4F70;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  transition: all 2s;
+  overflow: hidden;
+  transition: all 1s;
 }
 
 .search-container .search-icon {
   display: block;
+  margin-right: 2.5vw;
   transition: all 0.2s;
 }
 
@@ -86,7 +89,12 @@ body {
 }
 
 .search-container .search-box {
-  /* height: 1.2rem; */
+  position: absolute;
+  width: 0;
+  right: 0;
+  margin-right: 7vw;
+  height: 1.2rem;
+  transition: all 1s;
 }
 
 /* Main */
