@@ -110,9 +110,11 @@ body {
 .main-container .place-container {
   position: relative;
   width: 93vw;
+  overflow: hidden;
 }
 
 .location-slide {
+  display: none;
   position: absolute;
   display: flex;
   width: 100%;

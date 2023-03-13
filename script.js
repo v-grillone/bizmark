@@ -49,3 +49,70 @@ const toogleSearch = (e) => {
 }
 
 searchIcon.addEventListener('click', toogleSearch)
+
+// Creating Location Slides
+
+const placeContainer = document.querySelector('.place-container');
+const placeContainerHeight = placeContainer.offsetHeight
+
+locations.map((location => {
+  // Location Slide Div 
+  const locationSlide = document.createElement('div');
+  locationSlide.classList.add(`location-slide-${location.id}`);
+  locationSlide.style.position = 'absolute';
+  locationSlide.style.display = 'flex';
+  locationSlide.style.width = '100%';
+  locationSlide.style.height = '100%';
+  locationSlide.style.justifyContent = 'flex-start';
+  locationSlide.style.alignItems = 'center'; 
+  locationSlide.style.top = `${placeContainerHeight * location.id - placeContainerHeight}px`
+
+  // creating and adding black background to location slide
+  const blackBackground = document.createElement('div');
+  blackBackground.classList.add('black-background');
+  locationSlide.appendChild(blackBackground);
+
+  // creating and adding city background to location slide
+  const cityBackground = document.createElement('img');
+  cityBackground.classList.add('city-background-img');
+  cityBackground.setAttribute('src', `${location.img}`);
+  cityBackground.setAttribute('alt', `${location.city} backround image`);
+  locationSlide.appendChild(cityBackground);
+  
+  // creating and adding location details to location slide
+  const locationDetails = document.createElement('div');
+  locationDetails.classList.add('location-details');
+  locationSlide.appendChild(locationDetails);
+
+  // creating and adding information to location details
+  const country = document.createElement('h3');
+  country.classList.add('country');
+  country.innerHTML = location.country.toUpperCase()
+  locationDetails.appendChild(country);
+
+  const city = document.createElement('h5');
+  city.classList.add('city');
+  city.innerText = `${location.city}, ${location.country}`;
+  locationDetails.appendChild(city);
+
+  const locationDescription = document.createElement('p');
+  locationDescription.classList.add('location-description');
+  locationDescription.innerText = location.description;
+  locationDetails.appendChild(locationDescription);
+
+  const cta = document.createElement('a');
+  cta.classList.add('cta');
+  cta.setAttribute('href', '#');
+  cta.innerText = 'BOOK NOW';
+  locationDetails.appendChild(cta);
+
+  // creating and adding location costs to location slide
+  const locationCosts = document.createElement('div');
+  locationCosts.classList.add('location-costs');
+  locationSlide.appendChild(locationCosts);
+
+
+  console.log(locationSlide);
+  // Adding location slide to place container
+  placeContainer.appendChild(locationSlide);
+}))
