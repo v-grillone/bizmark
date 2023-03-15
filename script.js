@@ -111,6 +111,50 @@ locations.map((location => {
   locationCosts.classList.add('location-costs');
   locationSlide.appendChild(locationCosts);
 
+  // creating and adding location cost title to location costs
+  const locationCostTitle = document.createElement('div');
+  locationCostTitle.classList.add('location-cost-title');
+  locationCostTitle.innerHTML = '<p>Travel Plan</p>';
+  locationCosts.appendChild(locationCostTitle);
+
+  // creating and adding location cost expenses to location costs
+  const locationCostExpenses = document.createElement('div');
+  locationCostExpenses.classList.add('location-cost-expenses');
+  locationCosts.appendChild(locationCostExpenses);
+
+  // creating and adding flight to location cost expenses
+  const flight = document.createElement('div');
+  flight.classList.add('flight');
+  flight.innerHTML = `
+  <svg height="40px" width="40px" version="1.1" id="_x32_"        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"  xml:space="preserve">
+    <style type="text/css">.st0{fill:#ffffff;}</style>
+    <g>
+      <path class="st0" d="M507.068,194.059c-5.3-6.143-13.759-8.507-21.481-6.013l-59.859,17.264 c-11.406,3.695-23.81,2.792-34.574-2.507l-68.887-33.742l61.093-80.864c4.682-4.847,5.584-12.261,2.139-18.095 c-3.422-5.809-10.336-8.638-16.848-6.903L247.486,116.32l23.597,11.572l-16.23,8.115l-24.69-12.095L124.278,72.015 C65.799,43.262,18.154,52.695,3.16,83.208c-14.994,30.522,26.591,49.402,57.102,64.395l105.696,52.041l54.749,242.78 c1.877,8.982,10.003,15.28,19.224,14.828c9.172-0.464,16.633-7.509,17.632-16.669l33.956-179.158l73.569,36.226 c47.073,21.732,97.259,19.64,112.253-10.86l32.579-70.61C513.507,208.911,512.39,200.19,507.068,194.059z"/>
+    </g>
+  </svg>
+  <div class="flight-info">
+    <p class="flight-city">Flight To ${location.country}</p>
+    <p class="flight-cost">${location.flightCost}</p>
+  </div>
+  `
+  locationCostExpenses.appendChild(flight);
+
+  // creating and adding hotel to location cost expenses
+  const hotel = document.createElement('div');
+  hotel.classList.add('hotel');
+  hotel.innerHTML = `
+  <svg height="40px" width="40px" version="1.1" id="_x32_" 
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"  xml:space="preserve"> <style type="text/css">.st0{fill:#ffffff;}</style><g><polygon class="st0" points="61.549,88.131 0,88.131 0,423.869 61.549,423.869 61.549,339.934 450.442,339.934 450.442,423.869 511.992,423.869 511.992,339.934 512,339.934 512,267.188 61.549,267.188 	"/><path class="st0" d="M459.656,146.18H237.82v87.434H512v-35.09C512,169.615,488.566,146.18,459.656,146.18z"/><circle class="st0" cx="139.541" cy="191.992" r="47.91"/></g>
+    </svg>
+    <div class="hotel-info">
+      <p class="hotel-city">Hotel Cost</p>
+      <p class="hotel-cost">${location.hotelCost}</p>
+    </div>
+  `
+  locationCostExpenses.appendChild(hotel)
+
+  
+
 
   console.log(locationSlide);
   // Adding location slide to place container
