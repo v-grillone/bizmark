@@ -275,9 +275,12 @@ body {
 
 .location-scroll {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   right: 0;
   bottom: 0;
-  height: 200px;
+  height: 230px;
   margin: 0 50px 20px 0;
 }
 
@@ -295,9 +298,16 @@ body {
   background-color:white;
 }
 
-.scroll-current {
+.scroll-prev {
   color: white;
   font-size: 1rem;
+  cursor: pointer;
+}
+
+.scroll-next {
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* Main Socials */

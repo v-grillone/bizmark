@@ -65,7 +65,8 @@ locations.map((location => {
   locationSlide.style.height = '100%';
   locationSlide.style.justifyContent = 'flex-start';
   locationSlide.style.alignItems = 'center'; 
-  locationSlide.style.top = `${placeContainerHeight * location.id - placeContainerHeight}px`
+  locationSlide.style.top = `${placeContainerHeight * location.id - placeContainerHeight}px`;
+  locationSlide.style.zIndex = '-1'
 
   // creating and adding black background to location slide
   const blackBackground = document.createElement('div');
@@ -152,11 +153,32 @@ locations.map((location => {
     </div>
   `
   locationCostExpenses.appendChild(hotel)
-
   
-
-
-  console.log(locationSlide);
   // Adding location slide to place container
   placeContainer.appendChild(locationSlide);
 }))
+
+
+// Changing location slide
+const prevBtn = document.querySelector('.scroll-prev');
+const nextBtn = document.querySelector('.scroll-next');
+
+const changeSlide = (e) => {
+  const locationSLides = Array.from(placeContainer.children).slice(2)
+
+  if(Array.from(e.target.classList).includes('scroll-prev')){
+    locationSLides.forEach(slide => {
+      const oldTopValue = parseInt(slide.style.top.split('px')[0]);
+      slide.style.top = `${oldTopValue + placeContainerHeight}px`;
+    })
+  }else{
+    locationSLides.forEach(slide => {
+      const oldTopValue = parseInt(slide.style.top.split('px')[0]);
+      slide.style.top = `${oldTopValue - placeContainerHeight}px`;
+    })
+  }
+}
+
+
+prevBtn.addEventListener('click', changeSlide)
+nextBtn.addEventListener('click', changeSlide)
