@@ -163,19 +163,32 @@ locations.map((location => {
 const prevBtn = document.querySelector('.scroll-prev');
 const nextBtn = document.querySelector('.scroll-next');
 
-const changeSlide = (e) => {
-  const locationSLides = Array.from(placeContainer.children).slice(2)
+const scrollLength = document.querySelector('.scroll-length');
+const innerScrollLength = document.querySelector('.scroll-inner-length');
 
-  if(Array.from(e.target.classList).includes('scroll-prev')){
+innerScrollLength.style.height = `${scrollLength.scrollHeight / Array.from(placeContainer.children).slice(2).length}px`;
+
+innerScrollLength.style.marginTop = '0px'
+
+console.log(scrollLength.scrollHeight - scrollLength.scrollHeight / Array.from(placeContainer.children).slice(2).length)
+
+const changeSlide = (e) => {
+  const locationSLides = Array.from(placeContainer.children).slice(2);
+  const scrollDistance = parseInt(innerScrollLength.style.marginTop.split('px')[0]);
+  console.log(scrollDistance);
+
+  if(Array.from(e.target.classList).includes('scroll-prev') && scrollDistance > 0){
     locationSLides.forEach(slide => {
       const oldTopValue = parseInt(slide.style.top.split('px')[0]);
       slide.style.top = `${oldTopValue + placeContainerHeight}px`;
-    })
-  }else{
+    });
+    innerScrollLength.style.marginTop = `${scrollDistance - scrollLength.scrollHeight / Array.from(placeContainer.children).slice(2).length}px`;
+  }else if(Array.from(e.target.classList).includes('scroll-next') && scrollDistance < scrollLength.scrollHeight - scrollLength.scrollHeight / Array.from(placeContainer.children).slice(2).length){
     locationSLides.forEach(slide => {
       const oldTopValue = parseInt(slide.style.top.split('px')[0]);
       slide.style.top = `${oldTopValue - placeContainerHeight}px`;
-    })
+    });
+    innerScrollLength.style.marginTop = `${scrollDistance + scrollLength.scrollHeight / Array.from(placeContainer.children).slice(2).length}px`;
   }
 }
 
